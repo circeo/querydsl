@@ -15,7 +15,7 @@
       <binaries>
         <unpack>true</unpack>
         <includeDependencies>false</includeDependencies>
-        <attachmentClassifier>jakarta</attachmentClassifier>
+        <attachmentClassifier>jakarta-ee</attachmentClassifier>
         <outputDirectory>/</outputDirectory>
       </binaries>
     </moduleSet>
