@@ -1,4 +1,4 @@
-name: querydsl
+name: querydsl-deploy
 
 on:
   push:
@@ -80,10 +80,7 @@ jobs:
 
       - name: Deploy snapshot 🚀
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        env:
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-        run: mvn --batch-mode clean deploy --settings deploy/.m2/settings.xml -DskipTests
+        run: mvn --batch-mode clean deploy -DskipTests
 
       - name: Clean up before caching
         run: rm -rf ~/.m2/repository/com/querydsl/
